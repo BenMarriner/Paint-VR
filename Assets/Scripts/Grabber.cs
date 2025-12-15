@@ -86,6 +86,7 @@ public class Grabber : MonoBehaviour
             heldObject = item.gameObject;
             // Attach to grab point of grabber if a grab point has been provided. Otherwise, use the game object's transform as the grab point
             item.Grab(snapToGrabberGrabTransform ? grabberGrabTransform : transform);
+            GameManager.SetObjectInHand(handType, heldObject.gameObject);
         }
     }
 
@@ -95,6 +96,7 @@ public class Grabber : MonoBehaviour
         {
             heldObject.GetComponent<Grabable>().Drop();
             heldObject = null;
+            GameManager.ClearObjectInHand(handType);
         }
     }
 }

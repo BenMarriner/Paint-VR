@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Paintable : MonoBehaviour
 {
+    public int surfaceMaterialIdx;
+
     [HideInInspector]
     public Texture2D surfaceTexture;
 
     // Start is called before the first frame update
     void Start()
     {
-        surfaceTexture = GetComponent<MeshRenderer>().material.mainTexture as Texture2D;
+        Material surfaceMaterial = GetComponent<MeshRenderer>().materials[surfaceMaterialIdx];
+        surfaceTexture = surfaceMaterial.mainTexture as Texture2D;
     }
 
     // Update is called once per frame
