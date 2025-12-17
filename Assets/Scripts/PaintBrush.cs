@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PaintBrush : MonoBehaviour
 {
-    public Color PaintBrushColour = Color.green;
+    public Color CurrentPaintColour = Color.green;
+    public Color PaintlessColour = Color.orange;
     public int brushSize = 100;
     public Transform paintTracerTransform;
 
@@ -14,7 +15,7 @@ public class PaintBrush : MonoBehaviour
     void Start()
     {
         Configure();
-        Physics.IgnoreCollision(GameObject.Find("Player").GetComponent<Collider>(), GetComponent<Collider>());
+        Physics.IgnoreCollision(GameManager.Player.GetComponent<Collider>(), GetComponent<Collider>());
     }
 
 
@@ -42,13 +43,13 @@ public class PaintBrush : MonoBehaviour
     private void Configure()
     {
         brushHeadMaterial = GetComponent<MeshRenderer>().materials[1];
-        SetBrushColour(PaintBrushColour);
+        SetBrushColour(PaintlessColour);
     }
 
     public void SetBrushColour(Color brushColour)
     {
         brushHeadMaterial.color = brushColour;
-        PaintBrushColour = brushColour;
+        CurrentPaintColour = brushColour;
     }
 
     private void EvaluatePaintableSurface()
@@ -75,7 +76,7 @@ public class PaintBrush : MonoBehaviour
                 {
                     for (int y = -(brushSize / 2); y < brushSize / 2; y++)
                     {
-                        tex.SetPixel((int)pixelUV.x + x, (int)pixelUV.y + y, PaintBrushColour);
+                        tex.SetPixel((int)pixelUV.x + x, (int)pixelUV.y + y, CurrentPaintColour);
                     }
                 }
 
