@@ -10498,15 +10498,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.8632076
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_Color.g
-      value: 0.9261341
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_Color.r
-      value: 0.8915094
+      value: 0.99636835
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_DrawHalo
@@ -10530,7 +10530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_BounceIntensity
-      value: 2.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2382799219754379413, guid: 4062259d0de8f7e45aa0e60a349a4fb2, type: 3}
       propertyPath: m_Shadows.m_Strength
